@@ -1,0 +1,22 @@
+{
+    "name": "test_json_config_compile_uc_config",
+    "desc": "",
+    "params": {
+        "can_use_integral": {
+            "积分_null": null,
+            "积分_空字符串": "",
+            "积分_数字零": "0",
+            "积分_是": "1",
+            "积分_否": "2"
+        },
+        "enable_integral": {
+            "积分应用未安装": null,
+            "积分应用已启用": "T",
+            "积分应用禁用": "F",
+            "积分应用已过期": "E"
+        }
+    },
+    "expected": {
+        "hasException": false
+    }
+}

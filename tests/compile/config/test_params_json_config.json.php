@@ -1,0 +1,231 @@
+
+        function getDataProvider() {
+            $data = [
+    [
+        'case' => '1_积分_null_积分应用未安装',
+        'data' => [
+            'can_use_integral' => null,
+            'enable_integral' => null
+        ],
+        'expected' => [
+            'hasException' => false
+        ]
+    ],
+    [
+        'case' => '2_积分_null_积分应用已启用',
+        'data' => [
+            'can_use_integral' => null,
+            'enable_integral' => 'T'
+        ],
+        'expected' => [
+            'hasException' => false
+        ]
+    ],
+    [
+        'case' => '3_积分_null_积分应用禁用',
+        'data' => [
+            'can_use_integral' => null,
+            'enable_integral' => 'F'
+        ],
+        'expected' => [
+            'hasException' => false
+        ]
+    ],
+    [
+        'case' => '4_积分_null_积分应用已过期',
+        'data' => [
+            'can_use_integral' => null,
+            'enable_integral' => 'E'
+        ],
+        'expected' => [
+            'hasException' => false
+        ]
+    ],
+    [
+        'case' => '5_积分_空字符串_积分应用未安装',
+        'data' => [
+            'can_use_integral' => '',
+            'enable_integral' => null
+        ],
+        'expected' => [
+            'hasException' => false
+        ]
+    ],
+    [
+        'case' => '6_积分_空字符串_积分应用已启用',
+        'data' => [
+            'can_use_integral' => '',
+            'enable_integral' => 'T'
+        ],
+        'expected' => [
+            'hasException' => false
+        ]
+    ],
+    [
+        'case' => '7_积分_空字符串_积分应用禁用',
+        'data' => [
+            'can_use_integral' => '',
+            'enable_integral' => 'F'
+        ],
+        'expected' => [
+            'hasException' => false
+        ]
+    ],
+    [
+        'case' => '8_积分_空字符串_积分应用已过期',
+        'data' => [
+            'can_use_integral' => '',
+            'enable_integral' => 'E'
+        ],
+        'expected' => [
+            'hasException' => false
+        ]
+    ],
+    [
+        'case' => '9_积分_数字零_积分应用未安装',
+        'data' => [
+            'can_use_integral' => '0',
+            'enable_integral' => null
+        ],
+        'expected' => [
+            'hasException' => false
+        ]
+    ],
+    [
+        'case' => '10_积分_数字零_积分应用已启用',
+        'data' => [
+            'can_use_integral' => '0',
+            'enable_integral' => 'T'
+        ],
+        'expected' => [
+            'hasException' => false
+        ]
+    ],
+    [
+        'case' => '11_积分_数字零_积分应用禁用',
+        'data' => [
+            'can_use_integral' => '0',
+            'enable_integral' => 'F'
+        ],
+        'expected' => [
+            'hasException' => false
+        ]
+    ],
+    [
+        'case' => '12_积分_数字零_积分应用已过期',
+        'data' => [
+            'can_use_integral' => '0',
+            'enable_integral' => 'E'
+        ],
+        'expected' => [
+            'hasException' => false
+        ]
+    ],
+    [
+        'case' => '13_积分_是_积分应用未安装',
+        'data' => [
+            'can_use_integral' => '1',
+            'enable_integral' => null
+        ],
+        'expected' => [
+            'hasException' => false
+        ]
+    ],
+    [
+        'case' => '14_积分_是_积分应用已启用',
+        'data' => [
+            'can_use_integral' => '1',
+            'enable_integral' => 'T'
+        ],
+        'expected' => [
+            'hasException' => false
+        ]
+    ],
+    [
+        'case' => '15_积分_是_积分应用禁用',
+        'data' => [
+            'can_use_integral' => '1',
+            'enable_integral' => 'F'
+        ],
+        'expected' => [
+            'hasException' => false
+        ]
+    ],
+    [
+        'case' => '16_积分_是_积分应用已过期',
+        'data' => [
+            'can_use_integral' => '1',
+            'enable_integral' => 'E'
+        ],
+        'expected' => [
+            'hasException' => false
+        ]
+    ],
+    [
+        'case' => '17_积分_否_积分应用未安装',
+        'data' => [
+            'can_use_integral' => '2',
+            'enable_integral' => null
+        ],
+        'expected' => [
+            'hasException' => false
+        ]
+    ],
+    [
+        'case' => '18_积分_否_积分应用已启用',
+        'data' => [
+            'can_use_integral' => '2',
+            'enable_integral' => 'T'
+        ],
+        'expected' => [
+            'hasException' => false
+        ]
+    ],
+    [
+        'case' => '19_积分_否_积分应用禁用',
+        'data' => [
+            'can_use_integral' => '2',
+            'enable_integral' => 'F'
+        ],
+        'expected' => [
+            'hasException' => false
+        ]
+    ],
+    [
+        'case' => '20_积分_否_积分应用已过期',
+        'data' => [
+            'can_use_integral' => '2',
+            'enable_integral' => 'E'
+        ],
+        'expected' => [
+            'hasException' => false
+        ]
+    ]
+];
+            // 直接使用 PHP 数组
+            $dataNew = [];
+            foreach ($data as $item) {
+                $testcase = $item['case'];
+                $data = $item['data'];
+                $expected = $item['expected'];
+                $dataNew[] = [
+                    $testcase,
+                    $data,
+                    $expected,
+                ];
+            }
+            return $dataNew;
+        }
+        
+        /**
+         * @param string $testcase
+         * @param $data
+         * @param $expected
+         * @return void
+         * @dataProvider getDataProvider
+         */
+        public function testOk($testcase, $data, $expected)
+        {
+            $this->assertEquals(true, true, $testcase);
+        }
+        

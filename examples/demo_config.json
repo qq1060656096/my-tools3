@@ -1,0 +1,26 @@
+{
+  "params": {
+    "can_use_integral": {
+      "values": {
+        "积分_null": null,
+        "积分_空字符串": "",
+        "积分_数字零": "0",
+        "积分_是": "1",
+        "积分_否": "2"
+      }
+    },
+    "enable_integral": {
+      "values": {
+        "积分应用未安装": null,
+        "积分应用已启用": "T",
+        "积分应用禁用": "F",
+        "积分应用已过期": "E",
+        "积分应用非法数组": [1,2,3, {"ok":  true}]
+      }
+    }
+  },
+  "expected": {
+    "hasException": false,
+    "code": [422, 500]
+  }
+}

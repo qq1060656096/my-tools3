@@ -1,0 +1,6 @@
+# 在这里添加你的依赖包
+unittest
+setuptools
+twine
+wheel
+loguru==0.7.3

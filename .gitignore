@@ -1,0 +1,14 @@
+build
+dist
+hello3.egg-info
+*.Identifier
+*.json
+!demo.json
+*.php.tpl
+!demo.php.tpl
+
+.idea/
+__pycache__
+.gradio
+*.egg-info
+allure-results
